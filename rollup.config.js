@@ -3,7 +3,7 @@ export default [{
     input:"index.js",
     plugins: [],
     output: {
-        file: "dist/index.module.js",
+        file: "dist/index.js",
         format: "esm",
         exports: "named",
         sourcemap: false,
