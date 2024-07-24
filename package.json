@@ -1,0 +1,16 @@
+{
+  "name": "this-is-a-test-of-no-confidence",
+  "version": "1.0.1",
+  "description": "tet",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdoc": "^4.0.3",
+    "rollup": "^4.18.1"
+  }
+}
