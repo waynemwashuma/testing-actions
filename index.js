@@ -1,5 +1,3 @@
-export class A {}
-export function a() {}
 /**
  * @param {number} rr 
  */

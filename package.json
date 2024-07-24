@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "ci:check":"node --test",
+    "ci:build":"npm run build"
   },
   "author": "",
   "license": "ISC",
