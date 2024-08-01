@@ -1,5 +1,5 @@
 
-import {add} from "./dist/index.js"
+import {add} from "../dist/index.js"
 
 setInterval(
     ()=>{

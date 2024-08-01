@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "ci:check":"node --test",
+    "ci:check":"node --test test",
     "ci:build":"npm run build"
   },
   "author": "",

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import { strictEqual } from "node:assert";
-import { add,sub } from "./index.js";
+import { add,sub } from "../index.js";
 test("Test ops",async t => {
     
     await t.test("add",()=>{
