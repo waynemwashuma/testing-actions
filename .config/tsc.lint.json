@@ -1,0 +1,22 @@
+{
+  "include": [
+    "../src/index.js",
+    "../example/index.js"
+  ],
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strict":true,
+    "alwaysStrict": true,
+    "checkJs": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "target": "ES2020",
+    "skipLibCheck":true
+  }
+}
