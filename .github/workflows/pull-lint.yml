@@ -2,12 +2,33 @@ name: Check pull requests
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main","dev"]
 jobs:
-   lint:
-     runs-on: ubuntu-latest
-     steps: 
+  lint:
+    runs-on: ubuntu-latest
+    steps: 
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
       - run: npm ci
-      - run: npm run ci:check
+      - run: npm run lint:src-dry -- --max-warnings=0
+  lint-demos:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm run run lint:demos-dry -- --max-warnings=0
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm run build
