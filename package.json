@@ -1,16 +1,62 @@
 {
-  "name": "this-is-a-test-of-no-confidence",
-  "version": "1.0.1",
+  "name": "this-is-a-test-mess",
+  "version": "1.0.3",
   "description": "tet",
-  "main": "index.js",
   "type": "module",
-  "scripts": {
-    "build": "rollup -c rollup.config.js"
+  "main": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.module.js",
+      "require": "./dist/index.umd.js"
+    }
   },
-  "author": "",
-  "license": "ISC",
+  "author": "messer",
+  "scripts": {
+    "start": "vite --config .config/vite.config.js",
+    "dev": "npm run build:lib",
+    "init": "husky .husky",
+    "rollup": "rollup --config .config/rollup.config.js",
+    "eslint": "eslint --config .config/eslint.config.js",
+    "typedoc": "typedoc -options .config/typedoc.json --tsconfig .config/tsc.lint.json",
+    "types": "tsc -p .config/tsc.type.json",
+    "changelog": "node scripts/changelog.js",
+    "test": "node --test",
+    "build": "npm run build:lib && npm run build:docs",
+    "lint": "npm run lint:src && npm run lint:demos",
+    "lint:dry": "npm run lint:src-dry && npm run lint:demos-dry",
+    "lint:src-dry": "npm run eslint -- src",
+    "lint:demos-dry": "npm run eslint -- example",
+    "lint:src": "npm run lint:src-dry -- --fix",
+    "lint:demos": "npm run lint:demos-dry -- --fix",
+    "tsc:lint": "tsc -p tsconfig.json",
+    "watch:src": "npm run rollup -- --watch",
+    "watch:docs": "npm run typedoc -- --watch",
+    "build:lib": "npm run types && npm run rollup && npm run clean:types",
+    "build:docs": "npm run typedoc",
+    "clean:types": "rm -r types",
+    "pre-commit": "lint-staged --config .config/lint.config.js",
+    "pre-push": "npm run test"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@stylistic/eslint-plugin": "^5.1.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^51.3.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "rollup": "^4.12.0",
+    "rollup-plugin-dts": "^6.2.1",
+    "typedoc": "^0.28.7",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0"
+  },
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
-    "jsdoc": "^4.0.3",
-    "rollup": "^4.18.1"
+    "@eslint/js": "^9.30.1"
   }
 }
