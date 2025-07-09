@@ -30,7 +30,7 @@
     "lint:demos-dry": "npm run eslint -- example",
     "lint:src": "npm run lint:src-dry -- --fix",
     "lint:demos": "npm run lint:demos-dry -- --fix",
-    "tsc:lint": "tsc -p .config/tsc.lint.json",
+    "tsc:lint": "tsc -p tsconfig.json",
     "watch:src": "npm run rollup -- --watch",
     "watch:docs": "npm run typedoc -- --watch",
     "build:lib": "npm run types && npm run rollup && npm run clean:types",
