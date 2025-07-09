@@ -1,5 +1,6 @@
-
-import {add} from "../dist/index.js"
+/*global setInterval */
+/*global document */
+import {add} from "mylib"
 
 setInterval(
     ()=>{
